@@ -1,6 +1,6 @@
 # mvp-desenvolvimento-fullstack-basico-backend
 
-Projeto desenvolvido durante o curso de Desenvolvimento Fullstack Básico da Pós Graduação em Engenhaia de Software da PUC Rio.
+Projeto desenvolvido durante o curso de Desenvolvimento Fullstack Básico da Pós Graduação em Engenharia de Software da PUC Rio.
 
 ## Como executar o projeto
 
