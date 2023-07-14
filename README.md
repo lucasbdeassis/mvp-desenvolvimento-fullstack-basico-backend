@@ -14,4 +14,4 @@ Recomenda-se a utilização do ambiente virtual do python para a execução do p
 
 4. Execute o projeto com o comando `flask run`
 
-A aplicação estará disponível no endereço `http://localhost:5000`
+A aplicação estará disponível no endereço `http://localhost:5000` onde também se encontra a documentação swagger da api.
