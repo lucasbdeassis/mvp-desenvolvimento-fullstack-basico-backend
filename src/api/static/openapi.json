@@ -48,7 +48,7 @@
             "type": "string"
           },
           "created_at": {
-            "default": "2023-07-10T18:47:05.132157",
+            "default": "2023-07-14T11:04:23.791671",
             "format": "date-time",
             "title": "Created At",
             "type": "string"
@@ -76,7 +76,7 @@
             "type": "array"
           },
           "updated_at": {
-            "default": "2023-07-10T18:47:05.132157",
+            "default": "2023-07-14T11:04:23.791671",
             "format": "date-time",
             "title": "Updated At",
             "type": "string"
@@ -126,7 +126,7 @@
   "paths": {
     "/transactions": {
       "get": {
-        "description": "Retorna uma lista de transa\u00e7\u00f5es",
+        "description": "Returns a list of transactions",
         "responses": {
           "200": {
             "content": {
@@ -136,13 +136,13 @@
                 }
               }
             },
-            "description": "Retorna o tenant criado"
+            "description": "list of transactions"
           }
         },
-        "summary": "Retorna uma lista de transa\u00e7\u00f5es"
+        "summary": "Returns a list of transactions"
       },
       "post": {
-        "description": "Adiciona uma nova transa\u00e7\u00e3o",
+        "description": "Adds a new transaction",
         "requestBody": {
           "content": {
             "application/json": {
@@ -162,15 +162,15 @@
                 }
               }
             },
-            "description": "Retorna a transa\u00e7\u00e3o criada"
+            "description": "the created transaction"
           }
         },
-        "summary": "Adiciona uma nova transa\u00e7\u00e3o"
+        "summary": "Adds a new transaction"
       }
     },
     "/transactions/{id}": {
       "delete": {
-        "description": "Remove uma transa\u00e7\u00e3o",
+        "description": "Removes a transaction",
         "parameters": [
           {
             "in": "path",
@@ -190,13 +190,13 @@
                 }
               }
             },
-            "description": "Retorna o tenant criado"
+            "description": "success message"
           }
         },
-        "summary": "Remove uma transa\u00e7\u00e3o"
+        "summary": "Removes a transaction"
       },
       "get": {
-        "description": "Retorna uma transa\u00e7\u00e3o por id",
+        "description": "Returns a transaction",
         "parameters": [
           {
             "in": "path",
@@ -216,51 +216,10 @@
                 }
               }
             },
-            "description": "Retorna o tenant criado"
+            "description": "a transaction"
           }
         },
-        "summary": "Retorna uma transa\u00e7\u00e3o por id"
-      }
-    },
-    "/transactions/{id}/tags": {
-      "post": {
-        "description": "Remove uma tag",
-        "parameters": [
-          {
-            "in": "path",
-            "name": "id",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "items": {
-                  "type": "string"
-                },
-                "type": "array"
-              }
-            }
-          },
-          "required": true
-        },
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/TransactionCreateSchema"
-                }
-              }
-            },
-            "description": "Retorna a transa\u00e7\u00e3o editada"
-          }
-        },
-        "summary": "Remove uma tag"
+        "summary": "Returns a transaction"
       }
     }
   }
