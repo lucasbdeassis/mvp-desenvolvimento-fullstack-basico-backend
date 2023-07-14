@@ -25,7 +25,10 @@ class TransactionService:
         return self.repository.list()
 
     def delete_transaction(self, id):
-        return self.repository.delete(id)
+        transaction = self.repository.get(id)
+        if not transaction:
+            return None
+        return transaction
 
     def add_tags(self, id: str, tags: list[str]):
         transaction: Transaction = self.repository.get(id)
@@ -41,8 +44,10 @@ class TransactionService:
 
     def update_transaction(
         self, id, transaction_update: TransactionUpdateSchema
-    ) -> Transaction:
+    ) -> Transaction | None:
         transaction: Transaction = self.repository.get(id)
+        if not transaction:
+            return None
         transaction_data = transaction.dict()
         update_data = transaction_update.dict(exclude_unset=True)
         updated_transaction = Transaction(**{**transaction_data, **update_data})

@@ -67,11 +67,23 @@ def get_transaction(id):
           content:
             application/json:
               schema: TransactionSchema
+        404:
+          description: Transaction not found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: Transaction not found
     """
     with db_connection() as session:
         repository = TransactionRepository(session)
         service = TransactionService(repository)
         transaction = service.get_transaction(id)
+        if not transaction:
+            return {"error": "Transaction not found"}, 404
         return transaction.dict(), 200
 
 
@@ -114,10 +126,27 @@ def delete_transaction(id):
           description: success message
           content:
             application/json:
-              schema: TransactionSchema
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Transaction deleted successfully
+        404:
+          description: Transaction not found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: Transaction not found
     """
     with db_connection() as session:
         repository = TransactionRepository(session)
         service = TransactionService(repository)
-        service.delete_transaction(id)
+        transaction = service.delete_transaction(id)
+        if not transaction:
+            return {"error": "Transaction not found"}, 404
         return {"message": "Transaction deleted successfully"}, 200
