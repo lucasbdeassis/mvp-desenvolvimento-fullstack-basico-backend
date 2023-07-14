@@ -8,7 +8,7 @@ Recomenda-se a utilização do ambiente virtual do python para a execução do p
 
 1. Instale o virtualenv com o comando `python -m venv .venv`
 
-2. Ative o ambiente virtual com o comando `source .venv\Scripts\Activate.ps1`
+2. Ative o ambiente virtual com o comando `.venv\Scripts\Activate.ps1`
 
 3. Instale as dependências do projeto com o comando `pip install -r requirements.txt`
 
