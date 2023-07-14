@@ -48,7 +48,7 @@
             "type": "string"
           },
           "created_at": {
-            "default": "2023-07-14T11:04:23.791671",
+            "default": "2023-07-14T14:02:57.606031",
             "format": "date-time",
             "title": "Created At",
             "type": "string"
@@ -76,7 +76,7 @@
             "type": "array"
           },
           "updated_at": {
-            "default": "2023-07-14T11:04:23.791671",
+            "default": "2023-07-14T14:02:57.606031",
             "format": "date-time",
             "title": "Updated At",
             "type": "string"

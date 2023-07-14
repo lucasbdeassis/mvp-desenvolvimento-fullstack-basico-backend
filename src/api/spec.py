@@ -11,14 +11,6 @@ T = TypeVar("T", bound=BaseModel)
 SCHEMAS = dict()
 
 
-# def add_schema(schema: Type[T]):
-#     def decorator(func):
-#         func.schema = schema
-#         return func
-
-#     return decorator
-
-
 def add_schema(schemas: list[Type[T]]):
     for schema in schemas:
         SCHEMAS[schema.__name__] = schema.schema()
@@ -33,10 +25,10 @@ def config_spec(app: Flask):
     """
 
     spec = APISpec(
-        title="Teste",
+        title="Transaction API",
         version="1.0.0",
         openapi_version="3.0.2",
-        info=dict(description="Teste"),
+        info=dict(description="Transaction API"),
         plugins=[FlaskPlugin()],
     )
 
